@@ -1,0 +1,7 @@
+awk '{ for(i=1;i<=NF;i++) {
+  if(!cols[i]) { cols[i]=$i }
+  else { cols[i]=cols[i] " " $i }
+} }
+END {
+  for(i=1;i<=length(cols);i++) print cols[i]
+}' row-or.txt
